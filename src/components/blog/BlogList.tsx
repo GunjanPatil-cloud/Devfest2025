@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid2 as Grid } from '@mui/material';
+import { Box, Grid2 as Grid, Typography } from '@mui/material';
 import { MyLink } from '@/components/commun/link';
 import Image from 'next/image';
 import { BlogPost } from '@/types/blog';
@@ -7,6 +7,7 @@ import { BlogPost } from '@/types/blog';
 // Fonction pour supprimer le formatage Markdown
 const stripMarkdown = (text: string): string => {
   return text
+    .replace(/<.+?>/g, '') // Supprimer les balises HTML
     .replace(/\*\*(.*?)\*\*/g, '$1') // **bold** -> bold
     .replace(/\*(.*?)\*/g, '$1') // *italic* -> italic
     .replace(/__(.*?)__/g, '$1') // __bold__ -> bold
@@ -23,7 +24,6 @@ const stripMarkdown = (text: string): string => {
     .trim();
 };
 
-
 export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
   const formatDate = (dateString: string) => {
     try {
@@ -31,7 +31,7 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
       return date.toLocaleDateString('fr-FR', {
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
       });
     } catch {
       return dateString;
@@ -42,7 +42,7 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
     <Box sx={{ maxWidth: '1200px', mx: 'auto' }}>
       {posts.map((post, index) => {
         const isEven = index % 2 === 0;
-        
+
         return (
           <Box
             key={post.slug}
@@ -55,7 +55,10 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
               },
             }}
           >
-            <MyLink href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <MyLink
+              href={`/blog/${post.slug}`}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
               <Grid container sx={{ minHeight: 200 }}>
                 {/* Image à gauche pour les articles pairs, à droite pour les impairs */}
                 <Grid
@@ -83,7 +86,7 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
                     </Box>
                   )}
                 </Grid>
-                
+
                 {/* Contenu textuel */}
                 <Grid
                   size={{ xs: 12, md: 8 }}
@@ -102,10 +105,10 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
                   >
                     <Box>
                       <Typography
-                        variant="h2"
-                        component="h2"
+                        variant='h2'
+                        component='h2'
                         gutterBottom
-                        className="no-leaf"
+                        className='no-leaf'
                         sx={{
                           fontWeight: 'bold',
                           mb: 2,
@@ -113,9 +116,9 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
                       >
                         {post.title}
                       </Typography>
-                      
+
                       <Typography
-                        variant="body1"
+                        variant='body1'
                         sx={{
                           color: 'text.secondary',
                           lineHeight: 1.6,
@@ -125,7 +128,7 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
                         {stripMarkdown(post.content)}
                       </Typography>
                     </Box>
-                    
+
                     <Box
                       sx={{
                         display: 'flex',
@@ -135,7 +138,7 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
                       }}
                     >
                       <Typography
-                        variant="body2"
+                        variant='body2'
                         sx={{
                           color: 'text.secondary',
                           fontWeight: 500,
@@ -143,7 +146,7 @@ export const BlogList: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
                       >
                         {formatDate(post.date)}
                       </Typography>
-                      
+
                       {post.key && (
                         <Box
                           sx={{

@@ -1,6 +1,6 @@
-import { getBlogPostBySlug, getAllBlogPosts } from '@/services/blog';
+import { getAllBlogPosts, getBlogPostBySlug } from '@/services/blog';
 import { notFound } from 'next/navigation';
-import { Typography, Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { PrimarySection } from '@/components/commun/section/sectionType';
 import Image from 'next/image';
 import { Markdown } from '@/components/commun/markdown';
@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
   const locales = ['fr', 'en'];
 
-  return locales.flatMap(locale =>
+  return locales.flatMap((locale) =>
     posts.map((post) => ({
       locale,
       slug: post.slug,
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: BlogPostPageParams) {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
   const t = await getTranslation(params, 'pages.blog.post');
-  
+
   if (!post) {
     return {
       title: t('not-found'),
@@ -63,31 +63,32 @@ export default async function BlogPostPage({ params }: BlogPostPageParams) {
             src={post.image}
             alt={post.title}
             fill
+            sizes='100vw'
             className={styles.heroImage}
             priority
           />
         )}
-        
+
         {/* Overlay pour améliorer la lisibilité */}
         <Box className={styles.heroOverlay} />
-        
+
         {/* Contenu du hero */}
-        <Box className={styles.heroContent}>
-          <Typography 
-            variant='h1' 
-            component='h1' 
-            className={`no-leaf ${styles.heroTitle}`}
-          >
-            {post.title}
-          </Typography>
-        </Box>
+        {!post.hideTitle && (
+          <Box className={styles.heroContent}>
+            <Typography
+              variant='h1'
+              component='h1'
+              className={`no-leaf ${styles.heroTitle}`}
+            >
+              {post.title}
+            </Typography>
+          </Box>
+        )}
       </Box>
 
       {/* Contenu de l'article */}
-      <PrimarySection>
-        <Box className={styles.contentSection}>
-          <Markdown content={post.content} />
-        </Box>
+      <PrimarySection padding='small' className={styles.contentSection}>
+        <Markdown content={post.content} />
       </PrimarySection>
     </>
   );

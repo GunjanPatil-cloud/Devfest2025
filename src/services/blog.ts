@@ -5,7 +5,7 @@ import { BlogPost, BlogPostWithContent } from '@/types/blog';
 
 const blogDirectory = path.join(process.cwd(), 'data/blog');
 
-const images: Record<string, () => Promise<typeof import ('*.jpg')>> = {
+const images: Record<string, () => Promise<typeof import('*.jpg')>> = {
   'aws-hero': () => import('@/images/blog/aws-hero.png'),
   'aws-mini': () => import('@/images/blog/aws-mini.png'),
   'bouygues-mini': () => import('@/images/blog/bouygues-mini.png'),
@@ -32,7 +32,11 @@ const images: Record<string, () => Promise<typeof import ('*.jpg')>> = {
   'thales-mini': () => import('@/images/blog/thales-mini.png'),
   'u-tech-hero': () => import('@/images/blog/u-tech-hero.png'),
   'u-tech-mini': () => import('@/images/blog/u-tech-mini.png'),
-}
+  'checklist-participant-hero': () =>
+    import('@/images/blog/checklist-participant-hero.png'),
+  'checklist-participant-mini': () =>
+    import('@/images/blog/checklist-participant-mini.png'),
+};
 
 async function loadBlogImage(path: string): Promise<string | undefined> {
   const imageLoader = images[path];
@@ -56,16 +60,16 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         const fullPath = path.join(blogDirectory, filename);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const { data, content } = matter(fileContents);
-        
+
         const slug = filename.replace(/\.(mdx|md)$/, '');
-        
+
         // Extraire un extrait du contenu (premiers paragraphes)
         const excerpt = extractExcerpt(content);
-        
+
         // Gérer les images automatiquement avec await import
         const imageBase = data.image || slug;
         const miniImage = await loadBlogImage(imageBase + '-mini');
-        
+
         return {
           title: data.title || '',
           key: data.key || slug,
@@ -79,7 +83,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 
   return posts.sort((a, b) => {
     // Trier par date décroissante (plus récent en premier)
-  return new Date(b.date).getTime() - new Date(a.date).getTime();
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 }
 
@@ -89,11 +93,13 @@ function extractExcerpt(content: string): string {
     .replace(/^---[\s\S]*?---/, '')
     .replace(/^#.*$/gm, '')
     .trim();
-  
+
   // Prendre les premiers paragraphes (environ 200 caractères)
-  const paragraphs = cleanContent.split('\n\n').filter(p => p.trim().length > 0);
+  const paragraphs = cleanContent
+    .split('\n\n')
+    .filter((p) => p.trim().length > 0);
   let excerpt = '';
-  
+
   for (const paragraph of paragraphs) {
     if (excerpt.length + paragraph.length < 200) {
       excerpt += paragraph + '\n\n';
@@ -102,7 +108,7 @@ function extractExcerpt(content: string): string {
       const remainingLength = 200 - excerpt.length;
       const words = paragraph.split(' ');
       let truncated = '';
-      
+
       for (const word of words) {
         if (truncated.length + word.length + 1 < remainingLength) {
           truncated += (truncated ? ' ' : '') + word;
@@ -110,20 +116,22 @@ function extractExcerpt(content: string): string {
           break;
         }
       }
-      
+
       excerpt += truncated + '...';
       break;
     }
   }
-  
+
   return excerpt.trim() || cleanContent.substring(0, 200) + '...';
 }
 
-export async function getBlogPostBySlug(slug: string): Promise<BlogPostWithContent | null> {
+export async function getBlogPostBySlug(
+  slug: string
+): Promise<BlogPostWithContent | null> {
   try {
     const fullPath = path.join(blogDirectory, `${slug}.mdx`);
     let fileContents: string;
-    
+
     if (fs.existsSync(fullPath)) {
       fileContents = fs.readFileSync(fullPath, 'utf8');
     } else {
@@ -134,13 +142,13 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPostWithConte
         return null;
       }
     }
-    
+
     const { data, content } = matter(fileContents);
-    
+
     // Gérer les images automatiquement avec await import
     const imageBase = data.image || slug;
     const heroImage = await loadBlogImage(imageBase + '-hero');
-    
+
     return {
       title: data.title || '',
       key: data.key || slug,
@@ -148,6 +156,7 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPostWithConte
       date: data.date || '',
       slug,
       content,
+      hideTitle: data.hideTitle || false,
     } as BlogPostWithContent;
   } catch {
     return null;

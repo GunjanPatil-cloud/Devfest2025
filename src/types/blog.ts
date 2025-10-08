@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string;
   slug: string;
   content: string;
+  hideTitle?: boolean;
 }
 
 export interface BlogPostWithContent extends BlogPost {
