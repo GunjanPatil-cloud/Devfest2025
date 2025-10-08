@@ -24,8 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageParams) {
-  const { slug } = await params;
-  const post = await getBlogPostBySlug(slug);
+  const { slug, locale } = await params;
+  const post = await getBlogPostBySlug(slug, locale);
   const t = await getTranslation(params, 'pages.blog.post');
 
   if (!post) {
@@ -46,8 +46,8 @@ export async function generateMetadata({ params }: BlogPostPageParams) {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageParams) {
-  const { slug } = await params;
-  const post = await getBlogPostBySlug(slug);
+  const { slug, locale } = await params;
+  const post = await getBlogPostBySlug(slug, locale);
 
   if (!post) {
     notFound();

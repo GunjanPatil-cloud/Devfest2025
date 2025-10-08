@@ -55,7 +55,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 
   const posts = await Promise.all(
     filenames
-      .filter((name) => name.endsWith('.mdx') || name.endsWith('.md'))
+      .filter((name) => name.endsWith('.mdx') && !name.endsWith('-en.mdx'))
       .map(async (filename) => {
         const fullPath = path.join(blogDirectory, filename);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -126,22 +126,19 @@ function extractExcerpt(content: string): string {
 }
 
 export async function getBlogPostBySlug(
-  slug: string
+  slug: string,
+  locale: string
 ): Promise<BlogPostWithContent | null> {
   try {
     const fullPath = path.join(blogDirectory, `${slug}.mdx`);
-    let fileContents: string;
+    const fullPathEn = path.join(blogDirectory, `${slug}-en.mdx`);
 
-    if (fs.existsSync(fullPath)) {
-      fileContents = fs.readFileSync(fullPath, 'utf8');
-    } else {
-      const markdownPath = path.join(blogDirectory, `${slug}.md`);
-      if (fs.existsSync(markdownPath)) {
-        fileContents = fs.readFileSync(markdownPath, 'utf8');
-      } else {
-        return null;
-      }
-    }
+    // Prioriser la version anglaise si la locale est 'en' et que le fichier existe
+    const isEnglish =
+      locale.toLowerCase().startsWith('en') && fs.existsSync(fullPathEn);
+    const pathToUse = isEnglish ? fullPathEn : fullPath;
+
+    const fileContents = fs.readFileSync(pathToUse, 'utf8');
 
     const { data, content } = matter(fileContents);
 
