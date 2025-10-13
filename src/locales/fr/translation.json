@@ -93,6 +93,10 @@
     },
     "menu": {
       "name": "Menu",
+      "days": {
+        "Jeudi": "Jeudi",
+        "Vendredi": "Vendredi"
+      },
       "allergenes": {
         "gluten": "Gluten",
         "crustaces": "Crustacés",
