@@ -54,24 +54,27 @@ export const MenuTraiteur: React.FC<MenuTraiteurProps> = ({ locale }) => {
   }, [refVendredi]);
   return (
     <>
-      {Object.entries(MenuFR).map(([jour, sectionsJour], i) => (
-        <PrimarySection padding='none' key={jour}>
-          {i !== 0 && <Divider />}
-          <Typography
-            variant='h2'
-            ref={jour == 'Vendredi' ? refVendredi : null}
-          >
-            {jour}
-          </Typography>
-          {sectionsJour.map((section) => (
-            <SectionMenu
-              key={section.titreFR}
-              section={section}
-              locale={locale}
-            />
-          ))}
-        </PrimarySection>
-      ))}
+      {Object.entries(MenuFR).map(([jour, sectionsJour], i) => {
+        const jourEn = jour === 'Jeudi' ? 'Thursday' : 'Friday';
+        return (
+          <PrimarySection padding='none' key={jour}>
+            {i !== 0 && <Divider />}
+            <Typography
+              variant='h2'
+              ref={jour == 'Vendredi' ? refVendredi : null}
+            >
+              {locale == 'fr' ? jour : jourEn}
+            </Typography>
+            {sectionsJour.map((section) => (
+              <SectionMenu
+                key={section.titreFR}
+                section={section}
+                locale={locale}
+              />
+            ))}
+          </PrimarySection>
+        );
+      })}
       <TertiarySection padding='none'>
         <MyLink
           href='https://www.lecarredesdelices.com/'
