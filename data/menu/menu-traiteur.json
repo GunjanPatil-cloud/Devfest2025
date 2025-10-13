@@ -1,0 +1,644 @@
+{
+  "Jeudi": [
+    {
+      "titreFR": "Ateliers",
+      "titreEN": "Cookery demonstrations",
+      "plats": [
+        {
+          "titreFR": "Tartare de betterave, féta et noix servie sur une feuille d'endive",
+          "titreEN": "Beetroot, feta and walnut tartare on an endive leaf",
+          "allergenes": [
+            "fruits-a-coques",
+            "lactose"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Tartare de la criée : tartare de poisson et mangue et/ou kiwi sur une feuille",
+          "titreEN": "Fish tartare with mango and/or kiwi on a leaf",
+          "allergenes": [
+            "crustaces",
+            "poissons",
+            "sesame"
+          ],
+          "vege": false,
+          "vegan": false
+        }
+      ]
+    },
+    {
+      "titreFR": "Pièces cocktail",
+      "titreEN": "Cold savoury bites",
+      "plats": [
+        {
+          "titreFR": "California roll revisité",
+          "titreEN": "California roll, revisited",
+          "allergenes": [
+            "sulfites"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Mille-feuille au deux saumons et gelée passion",
+          "titreEN": "Two-salmon mille-feuille with passion fruit jelly",
+          "allergenes": [
+            "gluten",
+            "lactose",
+            "poissons",
+            "sulfites"
+          ],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Nougat de volaille vendéenne aux pistaches",
+          "titreEN": "Vendée-style chicken nougat with pistachios",
+          "allergenes": [
+            "fruits-a-coques",
+            "lactose",
+            "sulfites"
+          ],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Pic de boeuf chimichurri",
+          "titreEN": "Beef skewer with chimichurri sauce",
+          "allergenes": [],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Profiteroles de brunoise de légumes crémée",
+          "titreEN": "Vegetable cream profiteroles",
+          "allergenes": [
+            "gluten",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Tartelette petit pois menthe",
+          "titreEN": "Pea and mint tartlet",
+          "allergenes": [
+            "gluten",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Trilogie de carottes",
+          "titreEN": "Carrot trio",
+          "allergenes": [
+            "celeri"
+          ],
+          "vege": true,
+          "vegan": true
+        }
+      ]
+    },
+    {
+      "titreFR": "Mini entrées",
+      "titreEN": "Mini starters",
+      "plats": [
+        {
+          "titreFR": "Calisson de lentilles corail, lait de coco et tomate",
+          "titreEN": "Red lentil \"calisson\" with coconut milk and tomato",
+          "allergenes": [
+            "celeri"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Sphère de fourme d'Ambert et chutney d'abricot",
+          "titreEN": "Fourme d'Ambert cheese sphere with apricot chutney",
+          "allergenes": [
+            "lactose"
+          ],
+          "vege": true,
+          "vegan": false
+        }
+      ]
+    },
+    {
+      "titreFR": "Pièces lunch",
+      "titreEN": "Finger lunch",
+      "plats": [
+        {
+          "titreFR": "Batbout's poivronnade",
+          "titreEN": "Mini batbout with roasted pepper spread",
+          "allergenes": [
+            "gluten"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Pain polaire poulet tandoori et julienne de légumes",
+          "titreEN": "Nordic bread with tandoori chicken and julienned vegetables",
+          "allergenes": [
+            "gluten",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": false,
+          "vegan": false
+        }
+      ]
+    },
+    {
+      "titreFR": "Mini plats chauds",
+      "titreEN": "Mini hot dishes",
+      "plats": [
+        {
+          "titreFR": "Cabillaud au cidre de Bretagne, légumes de saison (brocolis et carotte)",
+          "titreEN": "Cod with Brittany cider and seasonal vegetables (broccoli and carrot)",
+          "allergenes": [
+            "lactose",
+            "mollusques",
+            "poissons",
+            "sulfites"
+          ],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Parmentier BIO de confit de canard",
+          "titreEN": "Organic duck confit shepherd's pie jar",
+          "allergenes": [
+            "gluten",
+            "lactose",
+            "sulfites"
+          ],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Risotto aux légumes verts au lait végétal",
+          "titreEN": "Green vegetable risotto with plant-based milk",
+          "allergenes": [],
+          "vege": true,
+          "vegan": true
+        }
+      ]
+    },
+    {
+      "titreFR": "Pièces sucrées",
+      "titreEN": "Sweet desserts",
+      "plats": [
+        {
+          "titreFR": "Brochettes de fruits frais",
+          "titreEN": "Fresh fruit skewers",
+          "allergenes": [],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Cup framboise",
+          "titreEN": "Raspberry cup",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Financier pistache framboise",
+          "titreEN": "Pistachio and raspberry financier",
+          "allergenes": [
+            "fruits-a-coques",
+            "gluten",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Jardinière mojito",
+          "titreEN": "Mojito fruit salad",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Mendiants fruits secs",
+          "titreEN": "Dried fruit mendiants",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Moelleux ananas caramel",
+          "titreEN": "Pineapple and caramel cake",
+          "allergenes": [
+            "fruits-a-coques",
+            "gluten"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Sablé choco mangue",
+          "titreEN": "Chocolate and mango shortbread",
+          "allergenes": [
+            "fruits-a-coques",
+            "gluten"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Sablé sarrasin chocolat",
+          "titreEN": "Buckwheat chocolate shortbread",
+          "allergenes": [
+            "fruits-a-coques",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Shooter de mousse chocolat caramel",
+          "titreEN": "Chocolate caramel mousse shooter",
+          "allergenes": [
+            "fruits-a-coques",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Shooter de smoothie : Fraise réglisse / fruits exotiques passion / menthe glacé coco curaçao",
+          "titreEN": "Smoothie shooter: Strawberry licorice / exotic passion fruit / mint & coconut curaçao",
+          "allergenes": [],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Tarte choco coco café",
+          "titreEN": "Chocolate coconut coffee tart",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Tarte sarrasin praliné",
+          "titreEN": "Buckwheat praline tart",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Macarons",
+          "titreEN": "Macarons",
+          "allergenes": [
+            "fruits-a-coques",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        }
+      ]
+    }
+  ],
+  "Vendredi": [
+    {
+      "titreFR": "Ateliers",
+      "titreEN": "Cookery demonstrations",
+      "plats": [
+        {
+          "titreFR": "Galette saucisse et confit d'oignon",
+          "titreEN": "Sausage galette with onion confit",
+          "allergenes": [
+            "sulfites"
+          ],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Galette aux légumes de saison",
+          "titreEN": "Seasonal vegetable galette",
+          "allergenes": [
+            "lactose"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Galette saumon et crème d'aneth",
+          "titreEN": "Salmon galette with dill cream",
+          "allergenes": [
+            "lactose",
+            "poissons"
+          ],
+          "vege": false,
+          "vegan": false
+        }
+      ]
+    },
+    {
+      "titreFR": "Pièces cocktail",
+      "titreEN": "Cold savoury bites",
+      "plats": [
+        {
+          "titreFR": "Charlotte de bretagne aux champignons",
+          "titreEN": "Brittany-style mushroom charlotte",
+          "allergenes": [],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Marbré de shitaké, crème de tofu",
+          "titreEN": "Shiitake marble with tofu cream",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Moelleux à l'olive noire, pesto rosso et tomate cerise confite",
+          "titreEN": "Soft cake with black olive, red pesto and candied cherry tomato",
+          "allergenes": [
+            "gluten"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Moelleux aneth et crevette marinée",
+          "titreEN": "Soft cake with dill and marinated shrimp",
+          "allergenes": [
+            "crustaces",
+            "gluten"
+          ],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Opéra de foie gras et gelée de cerise noire",
+          "titreEN": "Foie gras opera with black cherry jelly",
+          "allergenes": [
+            "fruits-a-coques",
+            "gluten",
+            "sulfites"
+          ],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Pic de saumon fumé Atlantique Nord, et betterave marinée à l'aneth",
+          "titreEN": "North Atlantic smoked salmon skewer, beetroot marinated with dill",
+          "allergenes": [
+            "poissons"
+          ],
+          "vege": false,
+          "vegan": false
+        },
+        {
+          "titreFR": "Quinoa à la sangria et sa crème acidulé",
+          "titreEN": "Quinoa with sangria and tangy cream",
+          "allergenes": [
+            "lactose",
+            "sulfites"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Tartelette au chèvre frais et miel de notre Région et noix",
+          "titreEN": "Mini tart with fresh goat cheese, local honey and walnuts",
+          "allergenes": [
+            "fruits-a-coques",
+            "gluten",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        }
+      ]
+    },
+    {
+      "titreFR": "Mini entrées",
+      "titreEN": "Mini starters",
+      "plats": [
+        {
+          "titreFR": "Carotte panée aux oignons frits, compotée de tomate",
+          "titreEN": "Breaded carrot with fried onions and tomato compote",
+          "allergenes": [
+            "gluten"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Fraicheur de petit pois, mascarpone à la menthe",
+          "titreEN": "Fresh pea and mint mascarpone",
+          "allergenes": [
+            "lactose"
+          ],
+          "vege": true,
+          "vegan": false
+        }
+      ]
+    },
+    {
+      "titreFR": "Pièces lunch",
+      "titreEN": "Finger lunch",
+      "plats": [
+        {
+          "titreFR": "Pain polaire, duo de crème d'artichauts et carotte",
+          "titreEN": "Nordic bread with duo of artichoke and carrot cream",
+          "allergenes": [
+            "gluten"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Wraps Serrano parmesan",
+          "titreEN": "Serrano and parmesan wrap",
+          "allergenes": [
+            "gluten",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": false,
+          "vegan": false
+        }
+      ]
+    },
+    {
+      "titreFR": "Mini plats chauds",
+      "titreEN": "Mini hot dishes",
+      "plats": [
+        {
+          "titreFR": "Pâtes crémeuses aux légumes de saison et parmesan",
+          "titreEN": "Creamy pasta with seasonal vegetables and parmesan",
+          "allergenes": [
+            "gluten",
+            "lactose"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Burger classique cheese (boeuf VBF, cheddar, cornichon, ketchup)",
+          "titreEN": "Classic cheeseburger (French beef, cheddar, pickle, ketchup)",
+          "allergenes": [
+            "gluten",
+            "lactose",
+            "moutarde"
+          ],
+          "vege": false,
+          "vegan": false
+        }
+      ]
+    },
+    {
+      "titreFR": "Pièces sucrées",
+      "titreEN": "Sweet desserts",
+      "plats": [
+        {
+          "titreFR": "Brochettes de fruits frais",
+          "titreEN": "Fresh fruit skewers",
+          "allergenes": [],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Cup framboise",
+          "titreEN": "Raspberry cup",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Financier pistache framboise",
+          "titreEN": "Pistachio and raspberry financier",
+          "allergenes": [
+            "fruits-a-coques",
+            "gluten",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Jardinière mojito",
+          "titreEN": "Mojito fruit salad",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Mendiants fruits secs",
+          "titreEN": "Dried fruit mendiants",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Moelleux ananas caramel",
+          "titreEN": "Pineapple and caramel cake",
+          "allergenes": [
+            "fruits-a-coques",
+            "gluten"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Sablé choco mangue",
+          "titreEN": "Chocolate and mango shortbread",
+          "allergenes": [
+            "fruits-a-coques",
+            "gluten"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Sablé sarrasin chocolat",
+          "titreEN": "Buckwheat chocolate shortbread",
+          "allergenes": [
+            "fruits-a-coques",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Shooter de mousse chocolat caramel",
+          "titreEN": "Chocolate caramel mousse shooter",
+          "allergenes": [
+            "fruits-a-coques",
+            "lactose",
+            "oeufs"
+          ],
+          "vege": true,
+          "vegan": false
+        },
+        {
+          "titreFR": "Shooter de smoothie : Fraise réglisse / fruits exotiques passion / menthe glacé coco curaçao",
+          "titreEN": "Smoothie shooter: Strawberry licorice / exotic passion fruit / mint & coconut curaçao",
+          "allergenes": [],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Tarte choco coco café",
+          "titreEN": "Chocolate coconut coffee tart",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Tarte sarrasin praliné",
+          "titreEN": "Buckwheat praline tart",
+          "allergenes": [
+            "fruits-a-coques"
+          ],
+          "vege": true,
+          "vegan": true
+        },
+        {
+          "titreFR": "Macarons",
+          "titreEN": "Macarons",
+          "allergenes": [],
+          "vege": true,
+          "vegan": false
+        }
+      ]
+    }
+  ]
+}
