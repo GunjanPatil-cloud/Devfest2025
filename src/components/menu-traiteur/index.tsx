@@ -18,7 +18,8 @@ import { Allergene } from './schema_menu';
 import { MyLink } from '../commun/link';
 import { PrimarySection, TertiarySection } from '../commun/section/sectionType';
 import './styles.scss';
-import { t, TFunction } from 'i18next';
+import translationsFR from '@/locales/fr/translation.json';
+import translationsEN from '@/locales/en/translation.json';
 
 const ALLERGENES: Allergene[] = [
   'gluten',
@@ -43,7 +44,6 @@ interface MenuTraiteurProps {
 
 export const MenuTraiteur: React.FC<MenuTraiteurProps> = ({ locale }) => {
   const refVendredi = React.useRef<HTMLElement | null>(null);
-
   React.useEffect(() => {
     if (
       refVendredi.current &&
@@ -54,28 +54,24 @@ export const MenuTraiteur: React.FC<MenuTraiteurProps> = ({ locale }) => {
   }, [refVendredi]);
   return (
     <>
-      {Object.entries(MenuFR).map(([jour, sectionsJour], i) => {
-        const jourEn = jour === 'Jeudi' ? 'Thursday' : 'Friday';
-        return (
-          <PrimarySection padding='none' key={jour}>
-            {i !== 0 && <Divider />}
-            <Typography
-              variant='h2'
-              ref={jour == 'Vendredi' ? refVendredi : null}
-            >
-              {locale == 'fr' ? jour : jourEn}
-            </Typography>
-            {sectionsJour.map((section) => (
-              <SectionMenu
-                key={section.titreFR}
-                section={section}
-                locale={locale}
-                t={t}
-              />
-            ))}
-          </PrimarySection>
-        );
-      })}
+      {Object.entries(MenuFR).map(([jour, sectionsJour], i) => (
+        <PrimarySection padding='none' key={jour}>
+          {i !== 0 && <Divider />}
+          <Typography
+            variant='h2'
+            ref={jour == 'Vendredi' ? refVendredi : null}
+          >
+            {jour}
+          </Typography>
+          {sectionsJour.map((section) => (
+            <SectionMenu
+              key={section.titreFR}
+              section={section}
+              locale={locale}
+            />
+          ))}
+        </PrimarySection>
+      ))}
       <TertiarySection padding='none'>
         <MyLink
           href='https://www.lecarredesdelices.com/'
@@ -99,11 +95,10 @@ export const MenuTraiteur: React.FC<MenuTraiteurProps> = ({ locale }) => {
 
 type TypeSectionMenu = (typeof MenuFR)['Jeudi'][0];
 
-const SectionMenu: React.FC<{
-  section: TypeSectionMenu;
-  locale: string;
-  t: TFunction;
-}> = ({ section, locale, t }) => {
+const SectionMenu: React.FC<{ section: TypeSectionMenu; locale: string }> = ({
+  section,
+  locale,
+}) => {
   const keyTitre = locale === 'fr' ? 'titreFR' : 'titreEN';
   return (
     <Box key={section.titreFR}>
@@ -129,7 +124,7 @@ const SectionMenu: React.FC<{
               backgroundColor: 'var(--primary)',
             }}
           >
-            <AllergenesPlat plat={plat} t={t} />
+            <AllergenesPlat plat={plat} locale={locale} />
           </AccordionDetails>
         </Accordion>
       ))}
@@ -138,9 +133,9 @@ const SectionMenu: React.FC<{
 };
 
 type TypePlat = TypeSectionMenu['plats'][0];
-const AllergenesPlat: React.FC<{ plat: TypePlat; t: TFunction }> = ({
+const AllergenesPlat: React.FC<{ plat: TypePlat; locale: string }> = ({
   plat,
-  t,
+  locale,
 }) => {
   return (
     <Stack direction='row' justifyContent='center' flexWrap='wrap'>
@@ -149,7 +144,7 @@ const AllergenesPlat: React.FC<{ plat: TypePlat; t: TFunction }> = ({
           allergene='vegetarien'
           isKO={false}
           isVege={true}
-          t={t}
+          locale={locale}
         />
       )}
       {plat.vegan && (
@@ -157,7 +152,7 @@ const AllergenesPlat: React.FC<{ plat: TypePlat; t: TFunction }> = ({
           allergene='vegan'
           isKO={false}
           isVege={true}
-          t={t}
+          locale={locale}
         />
       )}
       {ALLERGENES.filter((allergene) =>
@@ -168,7 +163,7 @@ const AllergenesPlat: React.FC<{ plat: TypePlat; t: TFunction }> = ({
           isKO={true}
           key={allergene}
           isVege={false}
-          t={t}
+          locale={locale}
         />
       ))}
       {!plat.vege && (
@@ -176,7 +171,7 @@ const AllergenesPlat: React.FC<{ plat: TypePlat; t: TFunction }> = ({
           allergene='vegetarien'
           isKO={true}
           isVege={true}
-          t={t}
+          locale={locale}
         />
       )}
       {!plat.vegan && (
@@ -184,7 +179,7 @@ const AllergenesPlat: React.FC<{ plat: TypePlat; t: TFunction }> = ({
           allergene='vegan'
           isKO={true}
           isVege={true}
-          t={t}
+          locale={locale}
         />
       )}
       {ALLERGENES.filter(
@@ -195,7 +190,7 @@ const AllergenesPlat: React.FC<{ plat: TypePlat; t: TFunction }> = ({
           isKO={false}
           key={allergene}
           isVege={false}
-          t={t}
+          locale={locale}
         />
       ))}
     </Stack>
@@ -206,9 +201,13 @@ const IndicateurAllergenes: React.FC<{
   allergene: Allergene | 'vegetarien' | 'vegan';
   isKO: boolean;
   isVege: boolean;
-  t: TFunction;
-}> = ({ allergene, isKO, isVege, t }) => {
-  const allergeneName = t(`pages.menu.allergenes.${allergene}`);
+  locale: string;
+}> = ({ allergene, isKO, isVege, locale }) => {
+  // Sélection des traductions en fonction de la locale
+  const translations = locale === 'fr' ? translationsFR : translationsEN;
+
+  const allergeneName =
+    translations.pages.menu.allergenes[allergene] || allergene;
 
   return (
     <Box

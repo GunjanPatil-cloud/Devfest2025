@@ -96,10 +96,6 @@
     },
     "menu": {
       "name": "Menu",
-      "days": {
-        "Jeudi": "Thursday",
-        "Vendredi": "Friday"
-      },
       "allergenes": {
         "gluten": "Gluten",
         "crustaces": "Shellfish",
